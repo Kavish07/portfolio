@@ -252,13 +252,14 @@ img{ max-width:100%; display:block; }
 .project-info p{ color:var(--text-dim); max-width:560px; margin-bottom:20px; }
 .tags{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px; }
 .tags span{
-  font-family:var(--mono); font-size:0.78rem; color:var(--accent-2);
-  border:1px solid rgba(56,224,216,0.25); padding:4px 10px; border-radius:999px;
-  background:rgba(56,224,216,0.05);
+  font-family:var(--mono); font-size:0.78rem; color:var(--proj-accent, var(--accent-2));
+  border:1px solid color-mix(in srgb, var(--proj-accent, var(--accent-2)) 30%, transparent);
+  padding:4px 10px; border-radius:999px;
+  background:color-mix(in srgb, var(--proj-accent, var(--accent-2)) 8%, transparent);
 }
 .project-links{ display:flex; gap:24px; }
 .project-links a{ font-size:0.9rem; color:var(--text); border-bottom:1px solid transparent; transition:border-color .2s ease; }
-.project-links a:hover{ border-color:var(--accent); }
+.project-links a:hover{ border-color:var(--proj-accent, var(--accent)); }
 
 .project.coming-soon{ opacity:0.55; }
 .project.coming-soon .project-info h3{ color:var(--text-dim); font-weight:500; }
@@ -266,7 +267,15 @@ img{ max-width:100%; display:block; }
 
 /* ---------- SKILLS ---------- */
 .skills-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:32px; margin-bottom:72px; }
-.skill-group h4{ font-size:0.95rem; color:var(--text); margin-bottom:16px; font-weight:600; }
+.skill-group{ border-top:2px solid var(--cat-accent, var(--border)); padding-top:16px; }
+.skill-group h4{
+  font-size:0.95rem; color:var(--text); margin-bottom:16px; font-weight:600;
+  display:flex; align-items:center; gap:9px;
+}
+.skill-group h4::before{
+  content:''; width:7px; height:7px; border-radius:50%; background:var(--cat-accent, var(--accent-2));
+  flex-shrink:0;
+}
 .skill-group ul li{
   color:var(--text-dim); font-size:0.92rem; padding:7px 0; border-bottom:1px dashed var(--border);
 }
@@ -277,10 +286,10 @@ img{ max-width:100%; display:block; }
 }
 .marquee-track{ display:inline-flex; gap:40px; animation:marquee 26s linear infinite; }
 .marquee-track span{
-  font-family:var(--mono); font-size:1.4rem; color:var(--text-dim); opacity:0.5;
+  font-family:var(--mono); font-size:1.4rem; color:var(--text-dim); opacity:0.75;
   display:inline-flex; align-items:center; gap:12px;
 }
-.tech-logo{ width:22px; height:22px; flex-shrink:0; }
+.tech-logo{ width:22px; height:22px; flex-shrink:0; opacity:0.9; }
 @keyframes marquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 
 /* ---------- CONTACT ---------- */
