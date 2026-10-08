@@ -206,7 +206,6 @@ img{ max-width:100%; display:block; }
   font-family:var(--mono); font-size:0.85rem; color:var(--accent-2); padding-top:3px;
 }
 .timeline-body h3{ font-size:1.15rem; font-weight:600; margin-bottom:10px; letter-spacing:-0.01em; }
-.timeline-client{ color:var(--text-dim); font-weight:400; }
 .timeline-body p{ color:var(--text-dim); max-width:620px; margin-bottom:16px; }
 
 /* ---------- PROJECTS ---------- */
