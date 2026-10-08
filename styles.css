@@ -278,7 +278,9 @@ img{ max-width:100%; display:block; }
 .marquee-track{ display:inline-flex; gap:40px; animation:marquee 26s linear infinite; }
 .marquee-track span{
   font-family:var(--mono); font-size:1.4rem; color:var(--text-dim); opacity:0.5;
+  display:inline-flex; align-items:center; gap:12px;
 }
+.tech-logo{ width:22px; height:22px; flex-shrink:0; }
 @keyframes marquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 
 /* ---------- CONTACT ---------- */
