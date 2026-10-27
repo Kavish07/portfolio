@@ -15,10 +15,12 @@ provide a way for recruiters/clients to get in touch.
    social icons (GitHub, LinkedIn, email).
 3. **About (`#about`)** — short bio, animated stat counters (years experience, projects shipped, clients).
 4. **Work (`#work`)** — grid of project cards (title, description, tech tags, live/source links).
-5. **Skills (`#skills`)** — grouped skill lists (Frontend / Backend / Infra & Tools / Currently learning)
-   plus a scrolling marquee of tech keywords.
-6. **Contact (`#contact`)** — pitch line, mailto link, social links.
-7. **Footer** — copyright with auto-updating year, back-to-top link.
+5. **Skills (`#skills`)** — grouped skill lists (Languages & Frameworks / Databases & Infra / Methods &
+   Tools / AI & Automation) plus a scrolling marquee of tech keywords.
+6. **Education (`#education`)** — reverse-chronological timeline of degrees/courses, reusing the
+   `.timeline` markup from Experience.
+7. **Contact (`#contact`)** — pitch line, mailto link, social links.
+8. **Footer** — copyright with auto-updating year, back-to-top link.
 
 ## Behavior (script.js)
 - Auto-fill current year in footer.
@@ -47,6 +49,9 @@ provide a way for recruiters/clients to get in touch.
 - [ ] Only 1 non-empty public repo exists on the linked GitHub (`Kavish07/webcup` is an empty 2017 repo,
       excluded). Add more repos/projects to GitHub (or list private/non-GitHub work here) to fill the
       remaining project slots.
+- [x] New **Education (`#education`)** section added between Skills and Contact: Master's in AI
+      (University of Mauritius, completed Oct 2026), an Arduino/mechatronics course (2021), and the two
+      earlier Bac+3/Bac+2 diplomas from Université des Mascareignes (2016/2014).
 
 ## Non-goals
 - No CMS, no backend, no analytics/tracking, no contact form (mailto only) — keep it static and dependency-free.

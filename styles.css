@@ -164,6 +164,8 @@ img{ max-width:100%; display:block; }
 }
 .hero-socials a:hover{ color:var(--text); border-color:var(--accent); transform:translateY(-2px); }
 
+.hero :focus-visible{ outline:2px solid var(--accent-2); outline-offset:3px; border-radius:4px; }
+
 .scroll-cue{
   position:absolute; bottom:36px; left:50%; transform:translateX(-50%);
   width:26px; height:42px; border:2px solid var(--border); border-radius:14px;
