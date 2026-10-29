@@ -10,7 +10,8 @@ provide a way for recruiters/clients to get in touch.
 - Files: `index.html`, `styles.css`, `script.js`.
 
 ## Structure (single page, anchor-linked nav)
-1. **Nav** — fixed header, logo, links to each section, "Let's talk" CTA, mobile hamburger menu.
+1. **Nav** — fixed header, logo, links to each section, "Let's talk" CTA, EN/FR language toggle, mobile
+   hamburger menu.
 2. **Hero (`#home`)** — name/status line, headline, subcopy, primary CTAs (view work / download résumé),
    social icons (GitHub, LinkedIn, email).
 3. **About (`#about`)** — short bio, animated stat counters (years experience, projects shipped, clients).
@@ -29,10 +30,18 @@ provide a way for recruiters/clients to get in touch.
 - Scroll-triggered reveal animations via `IntersectionObserver` (`.reveal` elements).
 - Animated count-up for stat numbers when scrolled into view.
 - Mobile nav toggle shows/hides links as an absolutely-positioned dropdown.
+- EN/FR language toggle: translatable elements carry a `data-fr` attribute (full inner-HTML string,
+  original English markup cached into `data-en` on load); clicking a `.lang-btn` swaps every tagged
+  element's content, updates `<html lang>`, and persists the choice in `localStorage`. aria-labels use
+  the parallel `data-fr-aria` / `data-en-aria` pair. Tech terms, proper nouns, and official qualification
+  names (e.g. the Bac+2/Bac+3 diploma titles, which are already in French) are intentionally left
+  untranslated in both languages.
 
 ## Known placeholders — need real content before launch
-- [x] `resume.pdf` — generated from `ASTEK_CV_KAVISH_KHOODEERAM.docx` (Word COM → PDF); linked from the
-      hero "Download résumé" button. Regenerate this file if the source `.docx` is updated.
+- [x] `assets/resume.pdf` — a 2-page résumé generated from the content already in `index.html` (summary,
+      experience, projects, skills, education), not from the old CV docx. Linked from the hero's
+      "Download résumé" button. Regenerate it by hand from current page content if that content changes
+      significantly — there's no build step wiring this up automatically.
 - [x] GitHub → `https://github.com/Kavish07`, LinkedIn → `https://www.linkedin.com/in/kavish-khoodeeram-38909ba9/`
       (hero socials + contact section).
 - [x] Twitter/X link removed (no account to link).
@@ -43,18 +52,23 @@ provide a way for recruiters/clients to get in touch.
       timeline pulled from the ASTEK CV (iQera, AGA, Softway Medical, ASTEK Mauritius, Conduent, Orange,
       plus earlier roles condensed into one entry). Update this section directly when the CV changes —
       it's hand-translated from the French source, not auto-synced.
-- [x] About bio, stats (10 years / 9 clients / 5 industries) and Skills section now reflect the real
+- [x] About bio, stats (12 years / 10 clients / 5 industries) and Skills section now reflect the real
       CV (Java/Spring Boot backend focus, in-progress AI Master's) instead of placeholder/generic text.
 - [x] Email is live: `kav.khood@gmail.com`.
-- [ ] Only 1 non-empty public repo exists on the linked GitHub (`Kavish07/webcup` is an empty 2017 repo,
-      excluded). Add more repos/projects to GitHub (or list private/non-GitHub work here) to fill the
-      remaining project slots.
+- [x] Work section now has 3 real projects: Multicomm-Ensemble, Mauresto, and OnlineHealthSystem (a
+      legacy Java hospital-management web app — raw Servlets/JSP/JSTL, JDBC, MySQL, jQuery — currently
+      mid-migration to Spring Boot). No "coming soon" slots left; add a new card if another project ships.
 - [x] New **Education (`#education`)** section added between Skills and Contact: Master's in AI
       (University of Mauritius, completed Oct 2026), an Arduino/mechatronics course (2021), and the two
       earlier Bac+3/Bac+2 diplomas from Université des Mascareignes (2016/2014).
+- [x] Bilingual EN/FR support added site-wide (nav toggle, client-side swap, no page duplication). French
+      copy for CV-derived sections (About/Experience/Education) is sourced from the original French CV
+      (`ASTEK_CV_KAVISH_KHOODEERAM.docx`) rather than re-translated from the English site text, where that
+      CV covers the entry; newer roles not in the CV (2024 onward) are translated fresh from the English
+      copy. Update both `data-fr` and the visible English text together when editing content going forward.
 
 ## Non-goals
 - No CMS, no backend, no analytics/tracking, no contact form (mailto only) — keep it static and dependency-free.
 
 ## Open questions
-- Hosting target (GitHub Pages, Netlify, Vercel, custom domain)?
+- None currently. Hosting target settled: GitHub Pages, deployed from `main`, no custom domain for now.

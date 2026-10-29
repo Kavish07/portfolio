@@ -1,6 +1,38 @@
 // Year
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Language toggle (EN / FR)
+const i18nEls = document.querySelectorAll('[data-fr]');
+i18nEls.forEach((el) => {
+  if (el.tagName !== 'META') el.dataset.en = el.innerHTML;
+});
+const ariaEls = document.querySelectorAll('[data-fr-aria]');
+ariaEls.forEach((el) => { el.dataset.enAria = el.getAttribute('aria-label'); });
+
+function applyLang(lang) {
+  i18nEls.forEach((el) => {
+    const value = lang === 'fr' ? el.dataset.fr : el.dataset.en;
+    if (el.tagName === 'META') el.setAttribute('content', value);
+    else el.innerHTML = value;
+  });
+  ariaEls.forEach((el) => {
+    el.setAttribute('aria-label', lang === 'fr' ? el.dataset.frAria : el.dataset.enAria);
+  });
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang-btn').forEach((btn) => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  try { localStorage.setItem('lang', lang); } catch (e) {}
+}
+
+document.querySelectorAll('.lang-btn').forEach((btn) => {
+  btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+});
+
+let savedLang = 'en';
+try { savedLang = localStorage.getItem('lang') || 'en'; } catch (e) {}
+if (savedLang === 'fr') applyLang('fr');
+
 // Navbar scroll state
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {

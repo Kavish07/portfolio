@@ -82,6 +82,12 @@ img{ max-width:100%; display:block; }
 .nav-toggle{ display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
 .nav-toggle span{ width:22px; height:2px; background:var(--text); border-radius:2px; }
 
+.lang-toggle{ display:flex; align-items:center; gap:6px; font-family:var(--mono); font-size:0.82rem; margin-left:20px; }
+.lang-btn{ background:none; border:none; color:var(--text-dim); cursor:pointer; padding:2px 3px; font-family:inherit; font-size:inherit; transition:color .2s ease; }
+.lang-btn:hover{ color:var(--text); }
+.lang-btn.active{ color:var(--accent-2); font-weight:600; }
+.lang-sep{ color:var(--border); font-size:inherit; }
+
 /* ---------- HERO ---------- */
 .hero{
   position:relative; min-height:100vh; display:flex; align-items:center;
