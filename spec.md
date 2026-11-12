@@ -20,8 +20,10 @@ provide a way for recruiters/clients to get in touch.
    Tools / AI & Automation) plus a scrolling marquee of tech keywords.
 6. **Education (`#education`)** — reverse-chronological timeline of degrees/courses, reusing the
    `.timeline` markup from Experience.
-7. **Contact (`#contact`)** — pitch line, mailto link, social links.
-8. **Footer** — copyright with auto-updating year, back-to-top link.
+7. **Speaking (`#speaking`)** — reverse-chronological timeline of meetup talks, reusing the `.timeline`
+   markup (tags + a `.project-links` "Slides →" download) from Experience/Work.
+8. **Contact (`#contact`)** — pitch line, mailto link, social links.
+9. **Footer** — copyright with auto-updating year, back-to-top link.
 
 ## Behavior (script.js)
 - Auto-fill current year in footer.
@@ -61,6 +63,10 @@ provide a way for recruiters/clients to get in touch.
 - [x] New **Education (`#education`)** section added between Skills and Contact: Master's in AI
       (University of Mauritius, completed Oct 2026), an Arduino/mechatronics course (2021), and the two
       earlier Bac+3/Bac+2 diplomas from Université des Mascareignes (2016/2014).
+- [x] New **Speaking (`#speaking`)** section added between Education and Contact: two meetup talks —
+      "BMaD Method to improve Agentic Development" (The May Meetup, coders.mu, May 2026) and "Exploring
+      the AI Multiagents" (MSCC monthly meetup, Aug 2025) — each with a downloadable slide deck under
+      `assets/`. Add a new timeline entry here as future talks happen.
 - [x] Bilingual EN/FR support added site-wide (nav toggle, client-side swap, no page duplication). French
       copy for CV-derived sections (About/Experience/Education) is sourced from the original French CV
       (`ASTEK_CV_KAVISH_KHOODEERAM.docx`) rather than re-translated from the English site text, where that
