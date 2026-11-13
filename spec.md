@@ -57,9 +57,11 @@ provide a way for recruiters/clients to get in touch.
 - [x] About bio, stats (12 years / 10 clients / 5 industries) and Skills section now reflect the real
       CV (Java/Spring Boot backend focus, in-progress AI Master's) instead of placeholder/generic text.
 - [x] Email is live: `kav.khood@gmail.com`.
-- [x] Work section now has 3 real projects: Multicomm-Ensemble, Mauresto, and OnlineHealthSystem (a
+- [x] Work section now has 5 real projects: Multicomm-Ensemble, Mauresto, OnlineHealthSystem (a
       legacy Java hospital-management web app — raw Servlets/JSP/JSTL, JDBC, MySQL, jQuery — currently
-      mid-migration to Spring Boot). No "coming soon" slots left; add a new card if another project ships.
+      mid-migration to Spring Boot), HarnessResourceManager (reusable AI-coding-agent config library),
+      and RecipeManager (recipe & meal-planning web app). No "coming soon" slots left; add a new card if
+      another project ships.
 - [x] New **Education (`#education`)** section added between Skills and Contact: Master's in AI
       (University of Mauritius, completed Oct 2026), an Arduino/mechatronics course (2021), and the two
       earlier Bac+3/Bac+2 diplomas from Université des Mascareignes (2016/2014).
